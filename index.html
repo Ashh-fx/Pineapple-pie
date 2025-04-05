@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pineapple Pie 🍍</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('background.png') no-repeat center center/cover;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      backdrop-filter: brightness(0.4);
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 20px;
+      max-width: 600px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      animation: fadeIn 2s ease;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    p.quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin: 1rem 0 2rem;
+    }
+    .question {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    .options button {
+      background-color: #ff4f80;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      margin: 0.5rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+    .options button:hover {
+      background-color: #ff2f65;
+    }
+    .hidden {
+      display: none;
+    }
+    audio {
+      margin-top: 2rem;
+      width: 100%;
+    }
+    .footer {
+      margin-top: 2rem;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>For My Pineapple 🍍</h1>
+    <p class="quote">"Love isn't measured by distance, but by the melody of two hearts singing the same song. No matter where I go, I'll always be yours, all the way."</p>
+
+    <p class="question">Hey Pineapple, ready for a little surprise? Choose the best option below 👇</p>
+    <div class="options">
+      <button onclick="revealSong('Yes, Totu 💖')">Yes, Totu 💖</button>
+      <button onclick="revealSong('Always Ready 🥰')">Always Ready 🥰</button>
+      <button onclick="revealSong('Duh! I was born for this 😎')">Duh! I was born for this 😎</button>
+    </div>
+
+    <div id="songPlayer" class="hidden">
+      <audio controls autoplay>
+        <source src="Pineapple pie.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="footer">
+        — With love, Totu 💙
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function revealSong(option) {
+      document.querySelector('.options').style.display = 'none';
+      document.querySelector('.question').innerHTML = `Awww 🥹 You chose: <strong>${option}</strong>. Here's our song just for you 💞`;
+      document.getElementById('songPlayer').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
